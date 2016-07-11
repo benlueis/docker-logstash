@@ -47,7 +47,7 @@ RUN set -ex \
 		sed -ri 's!^(path.log|path.config):!#&!g' "$LS_SETTINGS_DIR/logstash.yml"; \
 	fi
 
-COPY docker-entrypoint.sh /
+#COPY docker-entrypoint.sh /
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+#ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["-e", ""]
