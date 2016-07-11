@@ -23,10 +23,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN set -x \
  && apt-get update -qq \
  && apt-get install -qqy --no-install-recommends ca-certificates curl \
-    openjdk-8-jdk \
-    python \
-    py-pip \
- && rm -rf /var/lib/apt/lists/* \
+&& rm -rf /var/lib/apt/lists/* \
  && curl -L -o /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)" \
  && curl -L -o /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc" \
  && export GNUPGHOME="$(mktemp -d)" \
@@ -108,4 +105,5 @@ RUN chmod +x /usr/local/bin/start.sh
 #   5200/tcp (log4j)
 EXPOSE 5000 5002 5004 5006 5200
 
-CMD [ "" ]
+ENTRYPOINT ["/usr/local/bin/logstash.sh"]
+CMD [""]
