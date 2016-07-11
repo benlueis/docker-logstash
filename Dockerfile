@@ -8,7 +8,7 @@
 # docker run -p 5044:5044 -p 5000:5000 -it --name logstash <repo-user>/logstash
 
 FROM phusion/baseimage
-MAINTAINER Benlueis Ye <blueyy168@hotmail.com>
+MAINTAINER Ben Ye
 ENV REFRESHED_AT 2016-07-11
 
 ###############################################################################
