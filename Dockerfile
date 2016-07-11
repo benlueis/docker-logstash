@@ -23,7 +23,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN set -x \
  && apt-get update -qq \
  && apt-get install -qqy --no-install-recommends ca-certificates curl \
-&& rm -rf /var/lib/apt/lists/* \
+ && rm -rf /var/lib/apt/lists/* \
  && curl -L -o /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)" \
  && curl -L -o /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc" \
  && export GNUPGHOME="$(mktemp -d)" \
