@@ -1,12 +1,3 @@
-# Dockerfile for ELK stack
-# Elasticsearch 2.3.4, Logstash 2.3.4, Kibana 4.5.2
-
-# Build with:
-# docker build -t <repo-user>/elk .
-
-# Run with:
-# docker run -p 5601:5601 -p 9200:9200 -p 5044:5044 -p 5000:5000 -it --name elk <repo-user>/elk
-
 FROM phusion/baseimage
 MAINTAINER benlueis <blueyy168@hotmail.com>
 ENV REFRESHED_AT 2016-07-10
@@ -59,9 +50,4 @@ ADD . /src
 #                                   START
 ###############################################################################
 
-ADD ./start.sh /usr/local/bin/start.sh
-RUN chmod +x /usr/local/bin/start.sh
-
-VOLUME /var/lib/elasticsearch
-
-CMD [ "/usr/local/bin/start.sh" ]
+CMD [ "" ]
